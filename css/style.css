@@ -1,0 +1,197 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+.chopper {
+  z-index:49;
+  background:url('../assets/cat.gif') no-repeat 0 0;
+  width: 75px;
+  height: 150px;
+  background-size: contain;
+  position:absolute;
+}
+
+.shadow{
+  -webkit-filter: drop-shadow(6px 6px 3px rgba(0,0,0,0.5));
+  filter: url(shadow.svg#drop-shadow);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.redShadow{
+  -webkit-filter: drop-shadow(6px 6px 3px rgba(256,0,0,0.5));
+  filter: url(shadow.svg#drop-shadow);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+body{
+  text-shadow: 0px 2px 1px black;
+  background:url('../assets/galaxy.jpg') no-repeat 0 0;
+  background-size: cover;
+  margin:0;
+  padding:0;
+  background-color: gray;
+  overflow:hidden;
+  text-align:center;
+}
+
+.projectiles {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.cupcake {
+  background:url('../assets/cupcake.gif') no-repeat 0 0;
+  background-size: contain;
+}
+
+.cheezburger{
+  background:url('../assets/cheeseburger.gif') no-repeat 0 0;
+  background-size: contain;
+}
+
+.death{
+  background:url('../assets/death.gif') no-repeat 0 0;
+  background-size: contain;
+}
+.explosion{
+  /*width: 120px;
+  height: 259px;*/
+  margin-top:-100px;
+  width: 120px;
+  height: 259px;
+  background:url('../assets/explosion2.gif') no-repeat 0 0;
+  background-size:cover;
+  /*background-color:green;*/
+  /*background-size: contain;*/
+}
+.newGameButton {
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 0px 2px 1px black;
+  font-size:4em;
+  color:white;
+
+  text-align: center;
+  margin-top:20px;
+  /*margin-top: 3.75em;*/
+  width:500px;
+  height:125px;
+
+  border-radius:25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color:white;
+  outline:none;
+}
+.newGameMulti {
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 0px 2px 1px black;
+  font-size:4em;
+  color:white;
+
+  text-align: center;
+  margin-top: 3.75em;
+  width:500px;
+  height:250px;
+
+  border-radius:25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color:white;
+  outline:none;
+}
+.joinMulti {
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 0px 2px 1px black;
+  font-size:1em;
+  color:white;
+
+  text-align: center;
+  margin-top: .75em;
+  width:100px;
+  height:40px;
+
+  border-radius:5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color:white;
+  outline:none;
+}
+.instructions{
+  font-family: 'Indie Flower', cursive;
+  font-size:2em;
+  color:white;
+}
+
+.rotate90{
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+h3{
+  margin:0;
+  padding:0;
+}
+
+.highScores{
+  font-family: 'Indie Flower', cursive;
+  font-size:2em;
+  text-align:center;
+  color:white;
+}
+
+.score{
+  font-family: 'Indie Flower', cursive;
+  font-size:1em;
+  text-align:center;
+  color:white;
+}
+
+input[type="text"]
+{
+    background: rgba(0, 0, 0, 0.5);
+    font-family: 'Indie Flower', cursive;
+    font-size:2em;
+    text-align:center;
+    color:white;
+    outline: none;
+}
+
+.inputBox{
+  margin-top:225px;
+}
+
+.stats {
+  font-family: 'Indie Flower', cursive;
+  font-size:6em;
+  text-align:center;
+  color:white;
+  width: 100%;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.pulse{
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
