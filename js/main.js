@@ -6,8 +6,27 @@ var makeProjectiles = [];
 var projectileTime = 2000;
 var instructionWindow;
 var myDataRef = new Firebase('https://glowing-heat-1852.firebaseio.com//scoreList');
+var projectiles = [];
+var moveProjectileTime = 18;
 
 $(document).ready(function() {
+
+  var moveProjectiles = function(){
+    for(var i=0; i<projectiles.length; i++){
+      projectiles[i].iPosition = i;
+      projectiles[i].move(this.hitCall);
+    }
+  };
+
+  setInterval(function(){
+    if(chopper && chopper.points > 100){
+      moveProjectileTime = 6;
+    } else if(chopper && chopper.points > 200){
+      moveProjectileTime = 8;
+    }
+    moveProjectiles();
+  }, moveProjectileTime);
+
   var startGame = function(){
 
     instructionWindow.remove();
@@ -18,15 +37,15 @@ $(document).ready(function() {
     chopper = new Chopper(100);
 
     makeProjectiles.push(setInterval(function() {
-      var projectile = new Projectiles();//CUPCAKE
+      projectiles.push( new Projectiles())
     }, projectileTime/4));
 
     makeProjectiles.push(setInterval(function() {
-      var projectile = new Projectile1();
+      projectiles.push( new Projectile1())
     }, projectileTime));//CHEEZBURGER
 
     makeProjectiles.push(setInterval(function() {
-      var projectile = new KillerProjectile();
+      projectiles.push( new KillerProjectile())
     }, projectileTime/2));//DEATH
   };
 

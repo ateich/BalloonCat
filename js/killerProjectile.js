@@ -1,9 +1,9 @@
 var KillerProjectile = function() {
   Projectiles.apply(this, arguments);
   clearInterval(this.moveInterval);
-  this.moveInterval = setInterval(this.move.bind(this, function(){
+  this.hitCall = function(){
     chopper.loseLife(100);
-  }), this.moveTime);
+  };
 
   this.$node.removeClass('cupcake');
   this.$node.addClass('death pulse');

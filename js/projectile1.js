@@ -1,10 +1,13 @@
 var Projectile1 = function() {
   Projectiles.apply(this, arguments);
   clearInterval(this.moveInterval);
-  this.moveInterval = setInterval(this.move.bind(this, function(){
-    chopper.gainPoints(10);
-  }), this.moveTime);
+  // this.moveInterval = setInterval(this.move.bind(this, function(){
+  //   chopper.gainPoints(10);
+  // }), this.moveTime);
 
+  this.hitCall = function(){
+    chopper.gainPoints(10);
+  };
 
   this.$node.removeClass('cupcake');
   this.$node.addClass('cheezburger');
