@@ -27,12 +27,33 @@ $(document).ready(function() {
     moveProjectiles();
   }, moveProjectileTime);
 
-  var startGame = function(){
-
-    instructionWindow.remove();
+  var clearScreen = function(){
     $('.newGameButton').remove();
     $('.newGameMulti').remove();
     $('.inputBox').remove();
+    $('.highScores').remove();
+    $('#mainMenu').remove();
+    $('#newGame').remove();
+
+    $('br').remove();//This make cause issues in the future if we want breaklines to stay
+
+    //Not sure if this is necessary
+    var stats = $('.stats');
+    for(var i=1; i<stats.length; i++)
+    {
+      stats[i].remove();
+    }
+    stats.empty();
+  };
+
+  var startGame = function(){
+
+    // instructionWindow.remove();
+    // $('.newGameButton').remove();
+    // $('.newGameMulti').remove();
+    // $('.inputBox').remove();
+    instructionWindow.remove();
+    clearScreen();
 
     chopper = new Chopper(100);
 
@@ -50,17 +71,18 @@ $(document).ready(function() {
   };
 
   var instructions = function(){
-    $('.highScores').remove();
-    $('#mainMenu').remove();
-    $('#newGame').remove();
-    $('.inputBox').remove();
-    var stats = $('.stats');
-    $('br').remove();//This make cause issues in the future if we want breaklines to stay
-    for(var i=1; i<stats.length; i++)
-    {
-      stats[i].remove();
-    }
-    stats.empty();
+    // $('.highScores').remove();
+    // $('#mainMenu').remove();
+    // $('#newGame').remove();
+    // $('.inputBox').remove();
+    // var stats = $('.stats');
+    // $('br').remove();//This make cause issues in the future if we want breaklines to stay
+    // for(var i=1; i<stats.length; i++)
+    // {
+    //   stats[i].remove();
+    // }
+    // stats.empty();
+    clearScreen();
 
     instructionWindow = $('<div class="instructions"></div>');
     instructionWindow.append('<h3>Instructions</h3>');
@@ -105,17 +127,18 @@ $(document).ready(function() {
 
 
   showLobby = function(){
-    console.log("LOBBY");
-    instructionWindow.remove();
-    $('.newGameButton').remove();
-    $('.newGameMulti').remove();
-    $('.inputBox').remove();
-    var stats = $('.stats');
-    console.log(stats);
-    for(var i=1; i<stats.length; i++)
-    {
-      stats[i].remove();
-    }
+    // console.log("LOBBY");
+    // instructionWindow.remove();
+    // $('.newGameButton').remove();
+    // $('.newGameMulti').remove();
+    // $('.inputBox').remove();
+    // var stats = $('.stats');
+    // console.log(stats);
+    // for(var i=1; i<stats.length; i++)
+    // {
+    //   stats[i].remove();
+    // }
+    clearScreen();
 
     lobbyWindow = $('<div class="lobby"></div>');
     lobbyWindow.append('<div><button class="joinMulti">Join Game</button></div>');
@@ -158,8 +181,9 @@ $(document).ready(function() {
 
   gameOver = function(){
     for(var i =0; i<makeProjectiles.length; i++){
-    clearInterval(makeProjectiles[i]);
+     clearInterval(makeProjectiles[i]);
     }
+    projectiles = [];
 
 
     $('body').append($('<div class="inputBox"><input autofocus id="playerName" placeholder="Your Name Goes Here" type="text"></input></div>'));
