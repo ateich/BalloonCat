@@ -35,7 +35,13 @@ $(document).ready(function() {
     $('#mainMenu').remove();
     $('#newGame').remove();
     $('.inputBox').remove();
-    $('.stats').empty();
+    var stats = $('.stats');
+    $('br').remove();//This make cause issues in the future if we want breaklines to stay
+    for(var i=1; i<stats.length; i++)
+    {
+      stats[i].remove();
+    }
+    stats.empty();
 
     instructionWindow = $('<div class="instructions"></div>');
     instructionWindow.append('<h3>Instructions</h3>');
@@ -85,7 +91,12 @@ $(document).ready(function() {
     $('.newGameButton').remove();
     $('.newGameMulti').remove();
     $('.inputBox').remove();
-    $('.stats').remove();
+    var stats = $('.stats');
+    console.log(stats);
+    for(var i=1; i<stats.length; i++)
+    {
+      stats[i].remove();
+    }
 
     lobbyWindow = $('<div class="lobby"></div>');
     lobbyWindow.append('<div><button class="joinMulti">Join Game</button></div>');
