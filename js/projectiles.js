@@ -12,15 +12,12 @@ var Projectiles = function() {
     this.moveAmount = 8;
   } else if(chopper.points > 400){
     this.moveAmount = 8;
-    // this.moveTime = 8;
     projectileTime = 750;
   } else if(chopper.points > 800){
     this.moveAmount = 8;
-    // this.moveTime = 8;
     projectileTime = 500;
   }  else if(chopper.points > 1000){
     this.moveAmount = 8;
-    // this.moveTime = 8;
     projectileTime = 250;
   }
 
@@ -33,9 +30,6 @@ var Projectiles = function() {
     console.log('LOSE HEALTH');
     chopper.loseHealth();
   };
-  // this.moveInterval = setInterval(this.move.bind(this, function(){
-  //   chopper.loseHealth();
-  // }), this.moveTime);
 };
 
 Projectiles.prototype.move = function(hitCall) {
